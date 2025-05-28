@@ -1,0 +1,14 @@
+services:
+  db:
+    image: mysql
+    container_name: MYSQLDB
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=12345
+    volumes:
+      # - ./data:/var/lib/mysql
+      - mysqlsuperdb:/var/lib/mysql
+
+volumes:
+  mysqlsuperdb:
