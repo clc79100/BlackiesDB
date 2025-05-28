@@ -70,8 +70,6 @@ CREATE VIEW vw_Momo AS
     INNER JOIN Level AS L
         ON M.LevelID = L.LevelID;
 
-SELECT * FROM vw_Momo WHERE MomoID = 7;
-
 DELIMITER $$
 CREATE PROCEDURE sp_FilterByLevel(IN LevelToSearch INT)
 BEGIN
@@ -99,7 +97,6 @@ BEGIN
     WHERE A.Name = AutorToSearch;
 END
 DELIMITER ;
-
 
 DELIMITER $$
 CREATE PROCEDURE sp_GetMomo(IN IDToSearch INT)
