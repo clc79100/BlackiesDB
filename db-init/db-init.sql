@@ -1,3 +1,8 @@
+CREATE USER 'api-user'@'%' IDENTIFIED BY 'Password1';
+GRANT ALL PRIVILEGES ON *.* TO 'api-user'@'%' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+
+
 CREATE DATABASE blackies;
 USE blackies;
 CREATE TABLE Level(
