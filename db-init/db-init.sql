@@ -1,7 +1,10 @@
-CREATE USER 'api-user'@'%' IDENTIFIED BY 'Password1';
+CREATE USER 'api-user'@'%' IDENTIFIED IDENTIFIED WITH mysql_native_password BY 'Password1';
 GRANT ALL PRIVILEGES ON *.* TO 'api-user'@'%' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 
+CREATE USER 'test-user'@'%' IDENTIFIED IDENTIFIED BY 'Password1';
+GRANT ALL PRIVILEGES ON *.* TO 'api-user'@'%' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
 
 CREATE DATABASE blackies;
 USE blackies;
