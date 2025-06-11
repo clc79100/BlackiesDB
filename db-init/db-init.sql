@@ -78,7 +78,7 @@ CREATE VIEW vw_Momo AS
     INNER JOIN Level AS L
         ON M.LevelID = L.LevelID;
 
-DELIMITER $$
+DELIMITER //
 CREATE PROCEDURE sp_FilterByLevel(IN LevelToSearch INT)
 BEGIN
     SELECT 
@@ -89,10 +89,10 @@ BEGIN
     INNER JOIN Level AS L
         ON M.LevelID = L.LevelID
     WHERE L.Number = LevelToSearch;
-END
+END //
 DELIMITER ;
 
-DELIMITER $$
+DELIMITER //
 CREATE PROCEDURE sp_FilterByAutor(IN AutorToSearch VARCHAR(50))
 BEGIN
     SELECT 
@@ -103,12 +103,12 @@ BEGIN
     INNER JOIN Autor AS A
         ON M.AutorID = A.AutorID
     WHERE A.Name = AutorToSearch;
-END
+END //
 DELIMITER ;
 
-DELIMITER $$
+DELIMITER //
 CREATE PROCEDURE sp_GetMomo(IN IDToSearch INT)
 BEGIN
     SELECT * FROM vw_Momo WHERE vw_Momo.MomoID = IDToSearch;
-END
+END //
 DELIMITER ;
